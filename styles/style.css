@@ -177,15 +177,6 @@ section h2 {
   max-width: 600px;
 }
 
-/* .search-radio label {
-  margin-right: 15px;
-}
-
-.search-radio input:hover {
-  cursor: pointer;
-}
- */
-
 .search-radio {
   display: flex;
   justify-content: center;
@@ -303,6 +294,36 @@ section h2 {
   background: #0a4b8f;
 }
 
+/* Movie Details Section */
+.details-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0 30px;
+}
+
+.details-top img {
+  width: 400px;
+  height: 100%;
+  margin-right: 60px;
+  object-fit: cover;
+}
+
+.details-top p {
+  margin: 20px 0;
+}
+
+.details-top .btn {
+  margin-top: 20px;
+}
+
+.details-bottom li {
+  margin: 15px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Footer Section */
 .main-footer {
   background: var(--color-tertiary);
@@ -335,4 +356,46 @@ section h2 {
 
 .main-footer .container .social-links a:hover {
   color: var(--color-secondary);
+}
+
+/* Spinner */
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: none;
+}
+
+.film-reel {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  border-radius: 50%;
+  position: relative;
+}
+
+.film-roll {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to bottom, #1b1b1b 0%, #8d8d8d 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

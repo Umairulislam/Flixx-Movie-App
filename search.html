@@ -64,53 +64,60 @@
       </div>
     </section>
 
-    <!-- Trending Section -->
-    <section class="now-playing">
-      <h2>Now Playing</h2>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="movie-details.html?id=1">
-              <img src="././images/no-image.jpg" alt="Movie Title" />
-            </a>
-            <h4 class="swiper-rating">
-              <i class="fas fa-star text-secondary"></i> 8 / 10
-            </h4>
+    <!-- Search Results Section -->
+    <section id="search-results-wrapper" class="container">
+      <heading id="search-results-heading"></heading>
+      <div id="search-results" class="grid">
+        <div class="card">
+          <a href="#">
+            <img src="./images/no-image.jpg" class="card-img-top" alt="" />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Movie Or Show Name</h5>
+            <p class="card-text">
+              <small class="text-muted">Release: XX/XX/XXXX</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/no-image.jpg" class="card-img-top" alt="" />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Movie Or Show Name</h5>
+            <p class="card-text">
+              <small class="text-muted">Release: XX/XX/XXXX</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/no-image.jpg" class="card-img-top" alt="" />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Movie Or Show Name</h5>
+            <p class="card-text">
+              <small class="text-muted">Release: XX/XX/XXXX</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <a href="#">
+            <img src="./images/no-image.jpg" class="card-img-top" alt="" />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Movie Or Show Name</h5>
+            <p class="card-text">
+              <small class="text-muted">Release: XX/XX/XXXX</small>
+            </p>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Top Rated Section -->
-    <section class="now-playing">
-      <h2>Top Rated</h2>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="movie-details.html?id=1">
-              <img src="././images/no-image.jpg" alt="Movie Title" />
-            </a>
-            <h4 class="swiper-rating">
-              <i class="fas fa-star text-secondary"></i> 8 / 10
-            </h4>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Upcoming Section -->
-    <section class="now-playing">
-      <h2>Up coming</h2>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="movie-details.html?id=1">
-              <img src="././images/no-image.jpg" alt="Movie Title" />
-            </a>
-            <h4 class="swiper-rating">
-              <i class="fas fa-star text-secondary"></i> 8 / 10
-            </h4>
-          </div>
+      <div id="pagination">
+        <div class="pagination">
+          <button class="btn btn-primary" id="prev">Prev</button>
+          <button class="btn btn-primary" id="next">Next</button>
+          <div class="page-counter">Page 1 of 5</div>
         </div>
       </div>
     </section>
