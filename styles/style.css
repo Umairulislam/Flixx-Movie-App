@@ -324,6 +324,46 @@ section h2 {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+.details-cast h2 {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.cast-content p:nth-child(2) {
+  margin-top: 6px;
+  color: #c9c9c9;
+}
+
+.cast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cast-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: aqua;
+  border: 2px solid #fff;
+}
+
+@media screen and (max-width: 800px) {
+  .cast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+  }
+  .details-cast h2 {
+    font-size: 32px;
+  }
+}
+
 /* Footer Section */
 .main-footer {
   background: var(--color-tertiary);
@@ -361,29 +401,29 @@ section h2 {
 /* Spinner */
 .spinner-container {
   position: fixed;
+  z-index: 9999;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .film-reel {
-  width: 100px;
-  height: 100px;
-  background-color: #333;
+  width: 90px;
+  height: 90px;
+  background-color: #cecece;
   border-radius: 50%;
   position: relative;
 }
 
 .film-roll {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(to bottom, #1b1b1b 0%, #8d8d8d 100%);
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(to bottom, #1b1b1b 0%, #cecece 100%);
   border-radius: 50%;
   position: absolute;
   top: 10px;
@@ -398,4 +438,18 @@ section h2 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Backdrop image */
+.backdrop {
+  position: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.2;
 }

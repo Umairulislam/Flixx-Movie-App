@@ -3,19 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles/style.css" />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/1b6bfb2ded.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Flixx</title>
   </head>
+
   <body>
     <!-- Header Section -->
     <header class="main-header">
@@ -50,6 +60,14 @@
               <i class="fas fa-star text-secondary"></i> 8 / 10
             </h4>
           </div>
+          <div class="swiper-slide">
+            <a href="movie-details.html?id=1">
+              <img src="././images/no-image.jpg" alt="Movie Title" />
+            </a>
+            <h4 class="swiper-rating">
+              <i class="fas fa-star text-secondary"></i> 8 / 10
+            </h4>
+          </div>
         </div>
       </div>
     </section>
@@ -58,66 +76,6 @@
     <section class="container">
       <h2>Popular Movies</h2>
       <div id="popular-movies" class="grid">
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="./images/no-image.jpg"
-              class="card-img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card-body">
-            <h5 class="card-title">Movie Title</h5>
-            <p class="card-text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="./images/no-image.jpg"
-              class="card-img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card-body">
-            <h5 class="card-title">Movie Title</h5>
-            <p class="card-text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="./images/no-image.jpg"
-              class="card-img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card-body">
-            <h5 class="card-title">Movie Title</h5>
-            <p class="card-text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="./images/no-image.jpg"
-              class="card-img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card-body">
-            <h5 class="card-title">Movie Title</h5>
-            <p class="card-text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
