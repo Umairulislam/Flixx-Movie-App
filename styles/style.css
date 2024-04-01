@@ -14,6 +14,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: #fff;
+  min-height: 100vh;
 }
 
 /* General Styling*/
@@ -117,7 +118,7 @@ ul {
   color: var(--color-secondary);
 }
 
-/* Now Playing Section */
+/* Now Playing Section | Trending Section | Top Rated Section | Upcoming Section */
 .now-playing {
   padding: 60px;
   background: url("../images/showcase-bg.jpg") no-repeat center center/cover;
@@ -155,7 +156,7 @@ section h2 {
   padding: 10px;
 }
 
-/* Search Movies Section */
+/* Search Movies & TV Section */
 .search {
   padding: 60px;
   margin-bottom: 40px;
@@ -354,13 +355,14 @@ section h2 {
   border: 2px solid #fff;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .cast-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  .details-cast h2 {
-    font-size: 32px;
+}
+@media screen and (max-width: 768px) {
+  .cast-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -399,44 +401,51 @@ section h2 {
 }
 
 /* Spinner */
-.spinner-container {
+.spinner-btn {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
   position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: none;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.film-reel {
-  width: 90px;
-  height: 90px;
-  background-color: #cecece;
+.spinner-btn .dot-1,
+.spinner-btn .dot-2,
+.spinner-btn .dot-3 {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
   border-radius: 50%;
-  position: relative;
+  animation: bounce 1s infinite;
 }
 
-.film-roll {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(to bottom, #1b1b1b 0%, #cecece 100%);
-  border-radius: 50%;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  animation: spin 2s linear infinite;
+/* Dot 2 Animation Delay */
+.spinner-btn .dot-2 {
+  animation-delay: 0.2s;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+/* Dot 3 Animation Delay */
+.spinner-btn .dot-3 {
+  animation-delay: 0.4s;
+}
+
+/* Animation Keyframes */
+@keyframes bounce {
+  0%,
   100% {
-    transform: rotate(360deg);
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 

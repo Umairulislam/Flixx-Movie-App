@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <title>Flixx</title>
   </head>
-  
+
   <body>
     <!-- Header Section -->
     <header class="main-header">
@@ -76,52 +76,25 @@
 
     <!-- Trending Section -->
     <section class="now-playing">
-      <h2>Now Playing</h2>
+      <h2>Trending</h2>
       <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="movie-details.html?id=1">
-              <img src="././images/no-image.jpg" alt="Movie Title" />
-            </a>
-            <h4 class="swiper-rating">
-              <i class="fas fa-star text-secondary"></i> 8 / 10
-            </h4>
-          </div>
-        </div>
+        <div class="swiper-wrapper" id="trending-swiper"></div>
       </div>
     </section>
 
-    <!-- Top Rated Section -->
+    <!-- Upcoming Movies Section -->
     <section class="now-playing">
-      <h2>Top Rated</h2>
+      <h2>Up coming Movies</h2>
       <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="movie-details.html?id=1">
-              <img src="././images/no-image.jpg" alt="Movie Title" />
-            </a>
-            <h4 class="swiper-rating">
-              <i class="fas fa-star text-secondary"></i> 8 / 10
-            </h4>
-          </div>
-        </div>
+        <div class="swiper-wrapper" id="upcoming-movies-swiper"></div>
       </div>
     </section>
 
-    <!-- Upcoming Section -->
+    <!-- Upcoming TV Shows Section -->
     <section class="now-playing">
-      <h2>Up coming</h2>
+      <h2>Up coming TV Shows</h2>
       <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="movie-details.html?id=1">
-              <img src="././images/no-image.jpg" alt="Movie Title" />
-            </a>
-            <h4 class="swiper-rating">
-              <i class="fas fa-star text-secondary"></i> 8 / 10
-            </h4>
-          </div>
-        </div>
+        <div class="swiper-wrapper" id="upcoming-shows-swiper"></div>
       </div>
     </section>
 
@@ -144,11 +117,10 @@
     </footer>
 
     <!-- Spinner -->
-    <div class="spinner-container">
-      <div class="film-reel">
-        <div class="film-roll"></div>
-      </div>
-    </div>
+    <button class="spinner-btn" disabled>
+      Loading&nbsp; <span class="dot-1"></span><span class="dot-2"></span
+      ><span class="dot-3"></span>
+    </button>
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>

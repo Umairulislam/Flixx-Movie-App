@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <title>Flixx</title>
   </head>
-  
+
   <body>
     <!-- Header Section -->
     <header class="main-header">
@@ -51,24 +51,14 @@
     <section class="now-playing">
       <h2>Now Playing</h2>
       <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="tv-details.html">
-              <img src="./images/no-image.jpg" alt="Movie Title" />
-            </a>
-            <h4 class="swiper-rating">
-              <i class="fas fa-star text-secondary"></i> 8 / 10
-            </h4>
-          </div>
-        </div>
+        <div class="swiper-wrapper"></div>
       </div>
     </section>
 
     <!-- Popular TV Shows Section -->
     <section class="container">
       <h2>Popular TV Shows</h2>
-      <div id="popular-shows" class="grid">
-      </div>
+      <div id="popular-shows" class="grid"></div>
     </section>
 
     <!-- Footer Section -->
@@ -90,11 +80,10 @@
     </footer>
 
     <!-- Spinner -->
-    <div class="spinner-container">
-      <div class="film-reel">
-        <div class="film-roll"></div>
-      </div>
-    </div>
+    <button class="spinner-btn" disabled>
+      Loading&nbsp; <span class="dot-1"></span><span class="dot-2"></span
+      ><span class="dot-3"></span>
+    </button>
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>
