@@ -1,7 +1,7 @@
 // Global Object
 const global = {
   currentPage: window.location.pathname,
-  api_key: "7d543d12dc79b07ebb2b405afc72fc92",
+  api_key: "",
   api_url: "https://api.themoviedb.org/3/",
   search: {
     term: "",
@@ -473,11 +473,14 @@ async function search() {
 
     if (results.length === 0) {
       showAlert("No results found", "error")
+      document.getElementById("search-results-wrapper").style.minHeight =
+        "100vh"
     } else {
       displaySearchResults(results)
     }
   } else {
     showAlert("Please enter a search term", "error")
+    document.getElementById("search-results-wrapper").style.minHeight = "100vh"
   }
 }
 
