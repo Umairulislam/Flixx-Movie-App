@@ -275,6 +275,11 @@ section h2 {
   grid-gap: 20px;
 }
 
+.grid > div {
+  max-width: 350px;
+  margin: auto;
+}
+
 .card {
   background: #04376b;
   padding: 5px;
@@ -339,6 +344,9 @@ section h2 {
 .cast-content p:nth-child(2) {
   margin-top: 6px;
   color: #c9c9c9;
+}
+.cast-content p a:hover {
+  color: var(--color-secondary);
 }
 
 .cast-content {

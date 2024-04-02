@@ -182,7 +182,9 @@ async function displayMovieDetails() {
           : `<img src="./images/no-image.jpg" alt="${member.name}" class="cast-img" />`
       }
       <div class="cast-name">
-        <p><strong>${member.name}</strong></p>
+      <p><strong><a href="https://www.themoviedb.org/person/${
+        member.id
+      }" target="_blank">${member.name}</a></strong></p>
         <p>${member.character}</p>
       </div>
      </div>
@@ -277,7 +279,9 @@ async function displayShowDetails() {
           : `<img src="./images/no-image.jpg" alt="${member.name}" class="cast-img" />`
       }
       <div class="cast-name">
-        <p><strong>${member.name}</strong></p>
+      <p><strong><a href="https://www.themoviedb.org/person/${
+        member.id
+      }" target="_blank">${member.name}</a></strong></p>
         <p>${member.character}</p>
       </div>
      </div>
@@ -292,7 +296,7 @@ async function displayShowDetails() {
   showDetails.appendChild(detailsCast)
 }
 
-// Function to display Movie Slider
+// Function to display Now Playing Movie Slider
 async function displayMovieSlider() {
   const { results } = await fetchAPIData("movie/now_playing")
   results.forEach((movie) => {
@@ -318,7 +322,7 @@ async function displayMovieSlider() {
   })
 }
 
-// Function to display TV Show Slider
+// Function to display Now Playing TV Show Slider
 async function displayShowSlider() {
   const { results } = await fetchAPIData("tv/airing_today")
   results.forEach((show) => {
@@ -425,6 +429,33 @@ async function displayUpcomingShows() {
   })
 }
 
+// Function to Search for Movies and TV Shows
+async function search() {
+  const searchParams = new URLSearchParams(window.location.search)
+  global.search.type = searchParams.get("type")
+  global.search.term = searchParams.get("search-term")
+
+  if (global.search.term !== "" && global.search.term !== null) {
+    const { results, page, total_pages, total_results } = await searchAPIData(
+      `search/${global.search.type}`
+    )
+    global.search.page = page
+    global.search.totalPages = total_pages
+    global.search.totalResults = total_results
+
+    if (results.length === 0) {
+      showAlert("No results found", "error")
+      document.getElementById("search-results-wrapper").style.minHeight =
+        "100vh"
+    } else {
+      displaySearchResults(results)
+    }
+  } else {
+    showAlert("Please enter a search term", "error")
+    document.getElementById("search-results-wrapper").style.minHeight = "100vh"
+  }
+}
+
 // Function to Display Search Results
 async function displaySearchResults(results) {
   results.forEach((result) => {
@@ -455,33 +486,6 @@ async function displaySearchResults(results) {
     searchResults.appendChild(div)
   })
   displayPagination()
-}
-
-// Function to Search for Movies and TV Shows
-async function search() {
-  const searchParams = new URLSearchParams(window.location.search)
-  global.search.type = searchParams.get("type")
-  global.search.term = searchParams.get("search-term")
-
-  if (global.search.term !== "" && global.search.term !== null) {
-    const { results, page, total_pages, total_results } = await searchAPIData(
-      `search/${global.search.type}`
-    )
-    global.search.page = page
-    global.search.totalPages = total_pages
-    global.search.totalResults = total_results
-
-    if (results.length === 0) {
-      showAlert("No results found", "error")
-      document.getElementById("search-results-wrapper").style.minHeight =
-        "100vh"
-    } else {
-      displaySearchResults(results)
-    }
-  } else {
-    showAlert("Please enter a search term", "error")
-    document.getElementById("search-results-wrapper").style.minHeight = "100vh"
-  }
 }
 
 // Function to Display Pagination
@@ -522,9 +526,31 @@ function displayPagination() {
     const { results } = await searchAPIData(`search/${global.search.type}`)
     searchResults.innerHTML = ""
     pagination.innerHTML = ""
-    searchResultHeading.innerHTML = ""
+    // searchResultHeading.innerHTML = ""
     displaySearchResults(results)
   })
+}
+
+// Functio to Show Spinner
+function showSpinner() {
+  spinner.style.display = "flex"
+}
+
+// Function to Hide Spinner
+function hideSpinner() {
+  spinner.style.display = "none"
+}
+
+// Function to Display Backdrop Image
+function displayBackdrop(type, backdropPath) {
+  const backdropDiv = document.createElement("div")
+  backdropDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${backdropPath})`
+  backdropDiv.classList.add("backdrop")
+  if (type === "movie") {
+    movieDetails.appendChild(backdropDiv)
+  } else {
+    showDetails.appendChild(backdropDiv)
+  }
 }
 
 // Function to init swiper
@@ -552,28 +578,6 @@ function initSwiper() {
       },
     },
   })
-}
-
-// Function to Display Backdrop Image
-function displayBackdrop(type, backdropPath) {
-  const backdropDiv = document.createElement("div")
-  backdropDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${backdropPath})`
-  backdropDiv.classList.add("backdrop")
-  if (type === "movie") {
-    movieDetails.appendChild(backdropDiv)
-  } else {
-    showDetails.appendChild(backdropDiv)
-  }
-}
-
-// Functio to Show Spinner
-function showSpinner() {
-  spinner.style.display = "flex"
-}
-
-// Function to Hide Spinner
-function hideSpinner() {
-  spinner.style.display = "none"
 }
 
 // Functiuon to show Alert Message
