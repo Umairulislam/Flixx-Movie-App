@@ -606,35 +606,6 @@ function highlightActiveLink() {
 }
 
 // Function to initialize the Application
-// function init() {
-//   switch (global.currentPage) {
-//     case "/":
-//     case "/index.html":
-//       displayTrending()
-//       displayUpcomingMovies()
-//       displayUpcomingShows()
-//       break
-//     case "/movies.html":
-//       displayMovieSlider()
-//       displayPopularMovies()
-//       break
-//     case "/shows.html":
-//       displayShowSlider()
-//       displayPopularShows()
-//       break
-//     case "/movie-details.html":
-//       displayMovieDetails()
-//       break
-//     case "/tv-details.html":
-//       displayShowDetails()
-//       break
-//     case "/search.html":
-//       search()
-//       break
-//   }
-//   highlightActiveLink()
-// }
-
 function init() {
   const page = global.currentPage
 
