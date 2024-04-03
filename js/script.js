@@ -1,7 +1,9 @@
 // Global Object
+import { api_key } from "./config.js"
+
 const global = {
   currentPage: window.location.pathname,
-  api_key: "",
+  api_key: api_key,
   api_url: "https://api.themoviedb.org/3/",
   search: {
     term: "",
