@@ -606,31 +606,54 @@ function highlightActiveLink() {
 }
 
 // Function to initialize the Application
+// function init() {
+//   switch (global.currentPage) {
+//     case "/":
+//     case "/index.html":
+//       displayTrending()
+//       displayUpcomingMovies()
+//       displayUpcomingShows()
+//       break
+//     case "/movies.html":
+//       displayMovieSlider()
+//       displayPopularMovies()
+//       break
+//     case "/shows.html":
+//       displayShowSlider()
+//       displayPopularShows()
+//       break
+//     case "/movie-details.html":
+//       displayMovieDetails()
+//       break
+//     case "/tv-details.html":
+//       displayShowDetails()
+//       break
+//     case "/search.html":
+//       search()
+//       break
+//   }
+//   highlightActiveLink()
+// }
+
 function init() {
-  switch (global.currentPage) {
-    case "/":
-    case "/index.html":
-      displayTrending()
-      displayUpcomingMovies()
-      displayUpcomingShows()
-      break
-    case "/movies.html":
-      displayMovieSlider()
-      displayPopularMovies()
-      break
-    case "/shows.html":
-      displayShowSlider()
-      displayPopularShows()
-      break
-    case "/movie-details.html":
-      displayMovieDetails()
-      break
-    case "/tv-details.html":
-      displayShowDetails()
-      break
-    case "/search.html":
-      search()
-      break
+  const page = global.currentPage
+
+  if (["/", "/index.html"].includes(page)) {
+    displayTrending()
+    displayUpcomingMovies()
+    displayUpcomingShows()
+  } else if (page.includes("movies")) {
+    displayMovieSlider()
+    displayPopularMovies()
+  } else if (page.includes("shows")) {
+    displayShowSlider()
+    displayPopularShows()
+  } else if (page.includes("movie-details")) {
+    displayMovieDetails()
+  } else if (page.includes("tv-details")) {
+    displayShowDetails()
+  } else if (page.includes("search")) {
+    search()
   }
   highlightActiveLink()
 }
