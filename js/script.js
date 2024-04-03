@@ -1,5 +1,5 @@
 // Global Object
-import { api_key } from "./config.js"
+import api_key from "./config.js"
 
 const global = {
   currentPage: window.location.pathname,
